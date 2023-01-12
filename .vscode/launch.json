@@ -5,7 +5,7 @@
         "type": "go",
         "request": "attach",
         "mode": "remote",
-        "port": 5002,
+        "port": 8082,
         "host": "127.0.0.1",
         "cwd": "${workspaceFolder}",
     }

@@ -9,36 +9,45 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
       - ${DEBUG_PORT}:2345
     volumes:
-      - .:/clean_web
+      - .:/app
     env_file: .env
     security_opt:
       - seccomp:unconfined
     depends_on:
-      - database
+      - postgres
 
-  database:
+  postgres:
+    container_name: postgres
+    image: postgres
     build:
       context: .
-      dockerfile: ./docker/db.Dockerfile
+      dockerfile: ./docker/postgres.Dockerfile
     environment:
-      MYSQL_ROOT_PASSWORD: "${DB_PASS}"
-      MYSQL_DATABASE: "${DB_NAME}"
-      MYSQL_ROOT_HOST: "%"
-    command:
-      [
-        "--character-set-server=utf8mb4",
-        "--collation-server=utf8mb4_unicode_ci",
-        "--default-authentication-plugin=mysql_native_password",
-      ]
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-admin}
+      POSTGRES_HOST: ${DB_HOST:-localhost}
+      POSTGRES_PORT: ${DB_PORT:-5432}
+      POSTGRES_INITIAL_DBS: ${DB_NAME:-golangingin_dev}
+      PGDATA: /var/lib/postgresql/data
     ports:
-      - 33068:3306
+      - "5432:5432"
     volumes:
-      - clean_db:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
 
-  adminer:
-    image: adminer
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:6.13
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@pgadmin.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
     ports:
-      - ${ADMINER_PORT}:8080
+      - "${PGADMIN_PORT:-5051}:80"
+    restart: unless-stopped
 
 volumes:
-  clean_db:
+  postgres-data:
+  pgadmin:

@@ -9,8 +9,8 @@ To learn about project structure and dependency injection please go through [her
 - Make sure you have docker installed.
 - Copy `.env.example` to `.env`
 - Run `docker-compose up -d`
-- Go to `localhost:5000` to verify if the server works.
-- [Adminer](https://www.adminer.org/) Database Management runs at `5001` .
+- Go to `localhost:8080` to verify if the server works.
+- [Adminer](https://www.adminer.org/) Database Management runs at `8081` .
 
 If you are running without docker be sure database configuration is provided in `.env` file and run `go run . app:serve`
 
@@ -21,7 +21,7 @@ If you are running without docker be sure database configuration is provided in 
 
 | Key            | Value                    | Desc                                        |
 | -------------- | ------------------------ | ------------------------------------------- |
-| `SERVER_PORT`  | `5000`                   | Port at which app runs                      |
+| `SERVER_PORT`  | `8080`                   | Port at which app runs                      |
 | `ENV`          | `development,production` | App running Environment                     |
 | `LOG_OUTPUT`   | `./server.log`           | Output Directory to save logs               |
 | `LOG_LEVEL`    | `info`                   | Level for logging (check lib/logger.go:172) |
@@ -31,8 +31,8 @@ If you are running without docker be sure database configuration is provided in 
 | `DB_PORT`      | `3306`                   | Database Port                               |
 | `DB_NAME`      | `test`                   | Database Name                               |
 | `JWT_SECRET`   | `secret`                 | JWT Token Secret key                        |
-| `ADMINER_PORT` | `5001`                   | Adminer DB Port                             |
-| `DEBUG_PORT`   | `5002`                   | Port that delve debugger runs in            |
+| `ADMINER_PORT` | `8081`                   | Adminer DB Port                             |
+| `DEBUG_PORT`   | `8082`                   | Port that delve debugger runs in            |
 
 </details>
 
@@ -62,14 +62,14 @@ If you are running without docker be sure database configuration is provided in 
 - Environment Files
 - Logging (file saving on `production`) [zap](https://github.com/uber-go/zap)
 - Middlewares (cors)
-- Database Setup (mysql)
+- Database Setup (postgres or mysql)
 - Models Setup and Automigrate (gorm)
 - Repositories
 - Implementing Basic CRUD Operation
 - Authentication (JWT)
 - Migration Runner Implementation
 - Live code refresh
-- Dockerize Application with Debugging Support Enabled. Debugger runs at `5002`. Vs code configuration is at `.vscode/launch.json` which will attach debugger to remote application. [Learn More](https://medium.com/wesionary-team/docker-debug-environment-for-go-and-gin-framework-36df80e061ac?source=friends_link&sk=35c9d856852944083dd30059200d87f0)
+- Dockerize Application with Debugging Support Enabled. Debugger runs at `8082`. Vs code configuration is at `.vscode/launch.json` which will attach debugger to remote application. [Learn More](https://medium.com/wesionary-team/docker-debug-environment-for-go-and-gin-framework-36df80e061ac?source=friends_link&sk=35c9d856852944083dd30059200d87f0)
 - Cobra Commander CLI Support. try: `go run . --help`
 
 ## Todos

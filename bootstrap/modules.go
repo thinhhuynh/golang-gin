@@ -1,12 +1,12 @@
 package bootstrap
 
 import (
-	"github.com/dipeshdulal/clean-gin/api/controllers"
-	"github.com/dipeshdulal/clean-gin/api/middlewares"
-	"github.com/dipeshdulal/clean-gin/api/routes"
-	"github.com/dipeshdulal/clean-gin/lib"
-	"github.com/dipeshdulal/clean-gin/repository"
-	"github.com/dipeshdulal/clean-gin/services"
+	"github.com/thinhhuynh/golang-gin/api/controllers"
+	"github.com/thinhhuynh/golang-gin/api/middlewares"
+	"github.com/thinhhuynh/golang-gin/api/routes"
+	"github.com/thinhhuynh/golang-gin/lib"
+	"github.com/thinhhuynh/golang-gin/repository"
+	"github.com/thinhhuynh/golang-gin/services"
 	"go.uber.org/fx"
 )
 

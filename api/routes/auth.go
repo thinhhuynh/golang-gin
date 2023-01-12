@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/dipeshdulal/clean-gin/api/controllers"
-	"github.com/dipeshdulal/clean-gin/lib"
+	"github.com/thinhhuynh/golang-gin/api/controllers"
+	"github.com/thinhhuynh/golang-gin/lib"
 )
 
 // AuthRoutes struct

@@ -1,8 +1,8 @@
 package middlewares
 
 import (
-	"github.com/dipeshdulal/clean-gin/lib"
 	cors "github.com/rs/cors/wrapper/gin"
+	"github.com/thinhhuynh/golang-gin/lib"
 )
 
 // CorsMiddleware middleware for cors

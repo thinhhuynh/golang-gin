@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:1.19-alpine3.17
 
 # Required because go requires gcc to build
 RUN apk add build-base
@@ -9,9 +9,11 @@ RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
 RUN echo $GOPATH
 
-COPY . /clean_web
-WORKDIR /clean_web
+ENV APP_PATH='/app'
+
+COPY . ${APP_PATH}
+WORKDIR ${APP_PATH}
 
 RUN go mod download
 
-CMD sh /clean_web/docker/run.sh
+CMD sh ${APP_PATH}/docker/run.sh

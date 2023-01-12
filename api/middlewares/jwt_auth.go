@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/dipeshdulal/clean-gin/lib"
-	"github.com/dipeshdulal/clean-gin/services"
 	"github.com/gin-gonic/gin"
+	"github.com/thinhhuynh/golang-gin/lib"
+	"github.com/thinhhuynh/golang-gin/services"
 )
 
 // JWTAuthMiddleware middleware for jwt authentication

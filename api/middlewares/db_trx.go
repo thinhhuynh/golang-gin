@@ -3,9 +3,9 @@ package middlewares
 import (
 	"net/http"
 
-	"github.com/dipeshdulal/clean-gin/constants"
-	"github.com/dipeshdulal/clean-gin/lib"
 	"github.com/gin-gonic/gin"
+	"github.com/thinhhuynh/golang-gin/constants"
+	"github.com/thinhhuynh/golang-gin/lib"
 )
 
 // DatabaseTrx middleware for transactions support for database

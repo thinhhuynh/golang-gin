@@ -1,4 +1,4 @@
-module github.com/dipeshdulal/clean-gin
+module github.com/thinhhuynh/golang-gin
 
 go 1.17
 

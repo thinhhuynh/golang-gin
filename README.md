@@ -39,7 +39,7 @@ If you are running without docker be sure database configuration is provided in 
 #### Migration Commands
 
 > ⚓️ &nbsp; Add argument `p=host` if you want to run the migration runner from the host environment instead of docker environment.
-> Check [#19](https://github.com/dipeshdulal/clean-gin/issues/19) for more details. eg; `make p=host migrate-up`
+> Check [#19](https://github.com/thinhhuynh/golang-gin/issues/19) for more details. eg; `make p=host migrate-up`
 
 <details>
     <summary>Migration commands available</summary>
@@ -74,11 +74,11 @@ If you are running without docker be sure database configuration is provided in 
 
 ## Todos
 
-- [x] COBRA Commander CLI Support [#26](https://github.com/dipeshdulal/clean-gin/issues/26)
-- [ ] Swagger documentation examples [#25](https://github.com/dipeshdulal/clean-gin/issues/25)
-- [ ] Unit testing examples. [#23](https://github.com/dipeshdulal/clean-gin/issues/23)
-- [ ] File upload middelware. [#20](https://github.com/dipeshdulal/clean-gin/issues/20)
-- [ ] Use of Interfaces [#10](https://github.com/dipeshdulal/clean-gin/issues/10)
+- [x] COBRA Commander CLI Support [#26](https://github.com/thinhhuynh/golang-gin/issues/26)
+- [ ] Swagger documentation examples [#25](https://github.com/thinhhuynh/golang-gin/issues/25)
+- [ ] Unit testing examples. [#23](https://github.com/thinhhuynh/golang-gin/issues/23)
+- [ ] File upload middelware. [#20](https://github.com/thinhhuynh/golang-gin/issues/20)
+- [ ] Use of Interfaces [#10](https://github.com/thinhhuynh/golang-gin/issues/10)
 
 ## Contributing
 
